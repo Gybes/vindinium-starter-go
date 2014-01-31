@@ -4,7 +4,7 @@ Assuming you have the [suggested](http://golang.org/doc/code.html) directory lay
 
 Then copy the sample main.go file into your src directory:
 
-    cp $GOPATH/src/github.com/gybes/vindinium-starter-go/sample_main/main.go $GOPATH/src/
+    cp $GOPATH/src/github.com/Gybes/vindinium-starter-go/sample_main/main.go $GOPATH/src/
 
 Examples:
 
