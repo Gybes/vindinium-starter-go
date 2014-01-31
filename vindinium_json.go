@@ -39,4 +39,3 @@ type Pos_info struct {
   X int
   Y int
 }
-
