@@ -5,33 +5,38 @@ import (
   "strconv"
   "flag"
   "fmt"
+  "strings"
+  "io/ioutil"
 )
 
 func main() {
   flag.Parse()
-  if (len(flag.Args()) < 3) {
-    fmt.Println("Usage <key> <[training|arena]> <number-of-games|number-of-turns> [server-url]")
+  if (len(flag.Args()) < 2) {
+    fmt.Println("Usage <[training|arena]> <number-of-games|number-of-turns> [server-url]")
   }else {
     args := flag.Args()
-    key := args[0]
-    mode := args[1]
+    mode := args[0]
+    keyBuf, err := ioutil.ReadFile("secretKey")
+    if (err != nil) {
+      panic(err)
+    }
+    key := strings.Split(string(keyBuf), "\n")[0]
 
     var number_of_games, number_of_turns int
     var server_url string
-    var err error
 
     if(mode == "training") {
       number_of_games = 1
-      number_of_turns, err = strconv.Atoi(args[2])
+      number_of_turns, err = strconv.Atoi(args[1])
       if err != nil { panic(err.Error()) }
     }else {
-      number_of_games, err = strconv.Atoi(args[2])
+      number_of_games, err = strconv.Atoi(args[1])
       if err != nil { panic(err.Error()) }
       number_of_turns = 300 //ignored in arena mode
     }
 
-    if(len(args) == 4) {
-      server_url = args[3]
+    if(len(args) == 3) {
+      server_url = args[2]
     }else {
       server_url = "http://vindinium.org"
     }
