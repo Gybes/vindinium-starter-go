@@ -1,7 +1,7 @@
 package main
 
 import (
-  "github.com/aranasaurus/vindinium-starter-go/govindinium"
+  "../govindinium" // Change this to the full url of the starter pack repo in your implementation
   "strconv"
   "flag"
   "fmt"
