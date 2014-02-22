@@ -11,3 +11,8 @@ Examples:
     go run main.go mySecretKey arena 10
     go run main.go mySecretKey training 10
     go run main.go mySecretKey training 10 http://localhost:9000
+
+
+## Writing your own bot
+
+Interfaces are implicitly satisfied in Go so any type that implements the same method signature as that in the Bot interface can be used with this package.

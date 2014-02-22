@@ -4,14 +4,19 @@ import (
   "math/rand"
   "time"
 )
-
-/*****************
-*** Random Bot ***
-*****************/
+/**
+* Any type that implements a Move method with the signature in Bot will 
+* implicitly satisfy the interface and can be passed to Start in client 
+*/
 
 type Bot interface {
   Move(state State) string
 }
+
+
+/*****************
+*** Random Bot ***
+*****************/
 
 type RandomBot struct {
   Dirs []string
