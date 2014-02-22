@@ -1,3 +1,5 @@
+## Package Setup
+
 Assuming you have the [suggested](http://golang.org/doc/code.html) directory layout simply:
 
     go get github.com/Gybes/vindinium-starter-go
@@ -16,3 +18,5 @@ Examples:
 ## Writing your own bot
 
 Interfaces are implicitly satisfied in Go so any type that implements the same method signature as that in the Bot interface can be used with this package.
+
+[Here's](http://pastebin.com/GGcEVZek) an example of a bot implementation tacked onto the sample main file.
